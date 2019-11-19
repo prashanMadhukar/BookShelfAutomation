@@ -11,19 +11,19 @@ export class SubBookService {
   constructor(private httpClient:HttpClient) { }
 
   getAllBookCopies(bookId:number){    
-    return this.httpClient.get<SubBook[]>('http://192.168.105.212:8080/bookCopies/'+bookId);
+    return this.httpClient.get<SubBook[]>('http://localhost:8080/bookCopies/'+bookId);
   }
 
   addBookCopy(subBookObj:SubBook ){    
-    return this.httpClient.post('http://192.168.105.212:8080/bookCopies',subBookObj);
+    return this.httpClient.post('http://localhost:8080/bookCopies',subBookObj);
   }
 
   getBookCopyBysubBookId(subBookId : number){
-    return this.httpClient.get<SubBook>('http://192.168.105.212:8080/bookCopies/subBookId'+subBookId);
+    return this.httpClient.get<SubBook>('http://localhost:8080/bookCopies/subBookId'+subBookId);
   }
 
   removeBookCopy(subBookId : number){
-    return this.httpClient.delete('http://192.168.105.212:8080/bookCopies/'+subBookId);
+    return this.httpClient.delete('http://localhost:8080/bookCopies/'+subBookId);
 
   }
 }

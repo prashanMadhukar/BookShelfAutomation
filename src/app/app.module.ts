@@ -17,7 +17,7 @@ import { MemberProfileComponent } from './member-profile/member-profile.componen
 import { MemberDashboardComponent } from './member-dashboard/member-dashboard.component';
 import { ViewMemberProfileComponent } from './view-member-profile/view-member-profile.component';
 import { ReturnBookComponent } from './return-book/return-book.component';
-import { IssuedBookComponent } from './issued-book/issued-book.component';
+//import { IssuedBookComponent } from './issued-book/issued-book.component';
 import { ViewBookByIdComponent } from './view-book-by-id/view-book-by-id.component';
 import { ViewAllMemberComponent } from './view-all-member/view-all-member.component';
 import { DetailedSearchComponent } from './detailed-search/detailed-search.component';
@@ -53,7 +53,7 @@ import { AdminHomepageComponent } from './admin-homepage/admin-homepage.componen
     MemberDashboardComponent,
     ViewMemberProfileComponent,
     ReturnBookComponent,
-    IssuedBookComponent,
+    //IssuedBookComponent,
     ViewBookByIdComponent,
     ViewAllMemberComponent,
     DetailedSearchComponent,

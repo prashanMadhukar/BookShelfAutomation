@@ -17,10 +17,13 @@ export class ViewMemberProfileComponent implements OnInit {
   ngOnInit() {
     var userEmail =  sessionStorage.getItem('email');
     this.http.getMemberByEmail(userEmail).subscribe(
-      response => this.member = response
+      response => {
+        this.member = response;
+        this.dob=this.datePipe.transform(this.member.memberDob,"yyyy/MM/dd");
+        console.log(this.member.memberDob);
+      }
     );
-    this.dob=this.datePipe.transform(this.member.memberDob);
-    console.log(this.member.memberDob);
+    
     console.log(this.member);
   }
 }

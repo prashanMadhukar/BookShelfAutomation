@@ -15,42 +15,42 @@ export class MemberService {
     user.memberEmail=email;
     user.memberPassword=password;
     console.log(email+"  "+password);
-    return this.httpClient.post<Member>('http://192.168.105.212:8080/memberlogin',user);
+    return this.httpClient.post<Member>('http://localhost:8080/memberlogin',user);
   }
 
   getMembers(){    
-    return this.httpClient.get<Member[]>('http://192.168.105.212:8080/members');
+    return this.httpClient.get<Member[]>('http://localhost:8080/members');
   }
 
   addMembers(memberObj:Member ){    
-    return this.httpClient.post('http://192.168.105.212:8080/members',memberObj);
+    return this.httpClient.post('http://localhost:8080/members',memberObj);
   }
 
   getMemberByEmail(memberEmail : string){
-    return this.httpClient.get<Member>('http://192.168.105.212:8080/members/email/'+memberEmail);
+    return this.httpClient.get<Member>('http://localhost:8080/members/email/'+memberEmail);
   }
   
   getMemberById(memberId : number){
-    return this.httpClient.get<Member>('http://192.168.105.212:8080/members/'+memberId);
+    return this.httpClient.get<Member>('http://localhost:8080/members/'+memberId);
   }
 
   removeMember(memberId : number){
-    return this.httpClient.delete('http://192.168.105.212:8080/members/'+memberId);
+    return this.httpClient.delete('http://localhost:8080/members/'+memberId);
   }
   
   showIssueableBook(memberId : number){
-    return this.httpClient.get<Book[]>('http://192.168.105.212:8080/members/'+memberId+'/issue');
+    return this.httpClient.get<Book[]>('http://localhost:8080/members/'+memberId+'/issue');
   }
 
   issueBook(memberId:number,bookId:number){
-    return this.httpClient.get<number>('http://192.168.105.212:8080/members/'+memberId+'/issue/'+bookId);    
+    return this.httpClient.get<number>('http://localhost:8080/members/'+memberId+'/issue/'+bookId);    
   }
 
   showReturnableBook(memberId : number){
-    return this.httpClient.get<Book[]>('http://192.168.105.212:8080/members/'+memberId+'/return');
+    return this.httpClient.get<Book[]>('http://localhost:8080/members/'+memberId+'/return');
   }
 
   returnBook(memberId:number,bookId:number){
-    return this.httpClient.get('http://192.168.105.212:8080/members/'+memberId+'/return/'+bookId);    
+    return this.httpClient.get('http://localhost:8080/members/'+memberId+'/return/'+bookId);    
   }
 }

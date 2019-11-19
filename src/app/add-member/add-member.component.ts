@@ -9,7 +9,7 @@ import { MemberService } from '../Services/member.service';
 })
 export class AddMemberComponent implements OnInit {
 
-  memberObj = new Member();
+  member = new Member();
   option: string;
   message: string = "";
 
@@ -21,28 +21,20 @@ export class AddMemberComponent implements OnInit {
   }
 
   sendData(){
-    return this.httpclient.addMembers(this.memberObj).subscribe(
+    return this.httpclient.addMembers(this.member).subscribe(
       response =>{ 
-      console.log(this.memberObj);
-       this.memberObj.memberId=null;
-       this.memberObj.memberPassword=null;
-       this.memberObj.memberDob=null;
-       this.memberObj.memberAddress=null;
-       this.memberObj.memberEmail=null;
-       this.memberObj.suspended=null;
+      console.log(this.member);
+       this.member.memberId=null;
+       this.member.memberPassword=null;
+       this.member.memberDob=null;
+       this.member.memberAddress=null;
+       this.member.memberEmail=null;
+       this.member.suspended=null;
 
        this.message="Member added Successfully !";
       }
       ); 
   }
-
   
-  // setProperty(){
-  //   if(this.option=='True')
-  //   this.memberObj.suspended = 1;
-  //   else
-  //   this.memberObj.suspended = 0;
-  // }
-
 }
 
