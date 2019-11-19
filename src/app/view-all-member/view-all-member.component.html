@@ -1,0 +1,29 @@
+<app-admin-dashboard></app-admin-dashboard>
+<br/>
+<br/>
+<h4>List of Registered Members </h4>
+<div *ngIf="members" >
+        <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <!-- <th scope="col">DOB</th> -->
+                    <th scope="col">Address</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let member of members">
+                    <th scope="row">{{member.memberId}}</th>
+                    <!-- <td>{{member.memberDob}}</td> -->
+                    <td>{{member.memberAddress}}</td>
+                    <td>{{member.memberEmail}}</td>
+                    <td><p *ngIf="member.suspended">Suspended</p>
+                        <p *ngIf="!member.suspended">Active</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+    </div>
+

@@ -1,0 +1,27 @@
+<app-member-navbar></app-member-navbar>
+
+<br/>
+<div *ngIf="books" >
+    <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Publisher</th>
+                <th scope="col">Price</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let book of books" >
+                <th scope="row" *ngIf="book.bookId">{{book.bookId}}</th>
+                <td *ngIf="book.bookId">{{book.bookTitle}}</td>
+                <td *ngIf="book.bookId">{{book.bookAuthor}}</td>
+                <td *ngIf="book.bookId">{{book.bookPublisher}}</td>
+                <td *ngIf="book.bookId">{{book.bookPrice}}</td>
+                <td *ngIf="book.bookId"><button class="btn btn-primary" (click)="returnBook(book.bookId)" >Return</button></td>
+              </tr>
+            </tbody>
+          </table>
+</div>

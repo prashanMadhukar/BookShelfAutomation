@@ -1,0 +1,30 @@
+
+<!-- <div class="jumbotron">List of Books</div>
+<button class="btn btn-primary" (click)="viewAllBooks()">View All Books</button> -->
+<app-member-navbar *ngIf='usr'></app-member-navbar>
+<app-admin-dashboard *ngIf='!usr'></app-admin-dashboard>
+
+<div *ngIf="books" >
+    <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Publisher</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let book of books">
+                <th scope="row">{{book.bookId}}</th>
+                <td>{{book.bookTitle}}</td>
+                <td>{{book.bookAuthor}}</td>
+                <td>{{book.bookPublisher}}</td>
+                <td>{{book.bookPrice}}</td>
+                <td>{{book.bookQuantity}}</td>
+              </tr>
+            </tbody>
+          </table>
+</div>

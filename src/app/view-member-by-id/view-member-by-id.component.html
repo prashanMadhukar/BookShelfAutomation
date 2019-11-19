@@ -1,0 +1,43 @@
+<app-admin-dashboard></app-admin-dashboard>
+<br/>
+<br/>
+<div>
+    Member Id <input type="number" [(ngModel)]="id" placeholder="Enter member id"/>
+    <button class="btn btn-primary" (click)="showMemberById(id)" >Search</button>
+</div>
+
+<br/>
+<br/>
+<div *ngIf="isSearch">
+        <div *ngIf="member">
+            <h4>Details of Member with Id : {{id}}</h4>
+                <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">DOB</th>
+                            <th scope="col">Adress</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">{{member.memberId}}</th>
+                            <td>{{date}}</td>
+                            <td>{{member.memberAddress}}</td>
+                            <td>{{member.memberEmail}}</td>
+                            <td><p *ngIf="member.suspended">Suspended</p>
+                              <p *ngIf="!member.suspended">Active</p>
+                          </td>
+                          </tr>
+                        </tbody>
+                      </table>
+            </div>
+</div>
+
+<div *ngIf="isSearch">
+  <div *ngIf="!member">
+    <p>Not Found</p>
+  </div>
+</div>

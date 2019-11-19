@@ -1,0 +1,21 @@
+<app-login-nav></app-login-nav>      
+<div class="container">
+        <h2 class="mx-auto">Enter member details </h2> 
+        <form>
+                <div class="form-group">
+                  <label for="username">Username</label>
+                  <input type="email" class="form-control" id="username" aria-describedby="UsernameHelp" [(ngModel)]="username" placeholder="Enter email" name="username">
+                  <small id="UsernameHelp" class="form-text text-muted">Usernames are case sensitive.</small>
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" id="password" [(ngModel)]="password" placeholder="Password" name="password">
+                </div>
+                
+                <button type="submit" class="btn btn-primary" (click)=checkLogin() >Login</button>
+        </form>
+
+        <p>Not a member? <button class="btn btn-primary" routerLink='/register'> Sign up</button></p>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,58 @@
+<app-login-nav></app-login-nav>      
+<div class="container">
+       
+        
+        <form class="w-60 mx-auto"> 
+                <h2 class="mx-auto">Register - Enter your details </h2> 
+
+                <div class="form-group row">
+                    <label  class="col-sm-2 col-form-label" >Email</label>
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" [(ngModel)]="memberObj.memberEmail" name="memberEmail" placeholder="Enter Email"> 
+                    </div>
+                </div>
+
+        
+                
+
+                <div class="form-group" [class.has-error]="email.invalid && email.touched">
+                        <label for="email" class="control-label">Email</label>
+                        <input id="email" required type="text" class="form-control" name="email"
+                                [(ngModel)]="memberObj.memberEmail" #email="ngModel">
+                        <span class="help-block" *ngIf="email.invalid && email.touched">
+                          Email is required
+                        </span>
+                        <span class="help-block" *ngIf="email.errors?.email && email.touched">
+                          Email is Invalid
+                        </span>
+                      </div>
+
+                <div class="form-group row">
+                    <label  class="col-sm-2 col-form-label">Password</label>
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" [(ngModel)]="memberObj.memberPassword" name="memberPassword"placeholder="Enter Password">
+                    </div>
+                </div>
+            
+                <div class="form-group row">
+                    <label  class="col-sm-2 col-form-label">DOB</label>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control" [(ngModel)]="memberObj.memberDob" name="memberDob" placeholder="Enter DOB">
+                    </div>
+                </div>
+            
+                <div class="form-group row">
+                        <label  class="col-sm-2 col-form-label">Address</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" [(ngModel)]="memberObj.memberAddress" name="memberAddress" placeholder="Enter Address">
+                        </div>
+                </div>
+
+
+                <div class="form-group row">
+                                <div class="col-sm-10">
+                                  <button type="submit" class="btn btn-primary" (click)="sendData()">Sign Up</button>
+                                </div>
+                              </div>
+        </form>
+</div>

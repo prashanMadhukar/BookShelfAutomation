@@ -1,0 +1,50 @@
+<app-admin-dashboard></app-admin-dashboard>
+<h4>Enter the details of Member to add</h4>
+<form>
+    <div class="form-group row">
+        <label  class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+            <input type="email" class="form-control" [(ngModel)]="memberObj.memberEmail" name="memberEmail" placeholder="Enter Email">
+        </div>
+    </div>
+    <div class="form-group row">
+        <label  class="col-sm-2 col-form-label">Password</label>
+        <div class="col-sm-10">
+            <input type="password" class="form-control" [(ngModel)]="memberObj.memberPassword" name="memberPassword"placeholder="Enter Password">
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label  class="col-sm-2 col-form-label">DOB</label>
+        <div class="col-sm-10">
+            <input type="date" class="form-control" [(ngModel)]="memberObj.memberDob" name="memberDob" placeholder="Enter DOB">
+        </div>
+    </div>
+
+    <div class="form-group row">
+            <label  class="col-sm-2 col-form-label">Address</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" [(ngModel)]="memberObj.memberAddress" name="memberAddress" placeholder="Enter Address">
+            </div>
+    </div>
+
+      <!-- <div class="form-group row">
+            <label  class="col-sm-2 col-form-label">Suspended </label>
+            <div class="col-sm-10">                    
+                    <select class="bootstrap-select btn btn-outline-success" [(ngModel)]="option" name="someOption" (change)="setProperty()">
+                            <option selected="selected"><p class="dropdown-item" >Select one</p></option>
+                            <option><a class="dropdown-item" >True</a></option>
+                            <option><a class="dropdown-item" >False</a></option>
+                     </select>
+            </div>
+    </div> -->
+      
+          
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <button type="submit" class="btn btn-primary" (click)="sendData()">Add Member</button>
+      </div>
+    </div>
+  </form>
+
+  <h5>{{message}}</h5>

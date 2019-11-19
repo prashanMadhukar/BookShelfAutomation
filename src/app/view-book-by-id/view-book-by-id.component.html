@@ -1,0 +1,35 @@
+<app-member-navbar *ngIf='usr'></app-member-navbar>
+
+<app-admin-dashboard *ngIf='!usr'></app-admin-dashboard>
+<div>
+    Book Id <input type="number" [(ngModel)]="id" placeholder="Enter book id"/>
+    <button class="btn btn-primary" (click)="showBookById(id)" (change)="isSearch">Search</button>
+</div>
+
+<div *ngIf="isSearch">
+        <div *ngIf="books">
+            <h4>Details of Book with Id : {{id}}</h4>
+                <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Author</th>
+                            <th scope="col">Publisher</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">{{books.bookId}}</th>
+                            <td>{{books.bookTitle}}</td>
+                            <td>{{books.bookAuthor}}</td>
+                            <td>{{books.bookPublisher}}</td>
+                            <td>{{books.bookPrice}}</td>
+                            <td>{{books.bookQuantity}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+            </div>
+</div>
